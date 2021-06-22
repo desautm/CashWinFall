@@ -1,9 +1,8 @@
 ---
-title: "Presentation Ninja"
-subtitle: "⚔<br/>with xaringan"
-author: "Yihui Xie"
-institute: "RStudio, Inc."
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+title: "Comment gagner de l'argent sans se fatiguer..."
+subtitle: "(...en se fatiguant un peu quand même...)"
+author: "[Marc-André Désautels](https://madesautels.rbind.io) "
+date: "Octobre 2020 <br><br> Présentation disponible à https://desautm.github.io/CashWinFall <br> Code disponible à  https://github.com/desautm/CashWinFall"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -13,7 +12,8 @@ output:
       countIncrementalSlides: false
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
+background-image: url(https://highline.huffingtonpost.com/articles/en/lotto-winners/media/images/lotto_twitter.jpg)
+background-size: contain
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)

@@ -165,6 +165,45 @@ $$\binom{5}{3}=C_3^5=\dfrac{5!}{3!(5-3)!}=10$$
 
 ---
 
+## Une fausse loterie
+
+- Supposons que le billet coûte 2$.
+
+- Vous avez une chance sur 200 de gagner 300$.
+
+- Si vous jouez 1 000 fois, vous allez probablement gagner 5 fois, vous devriez gagner 1 500$, soit 1,50$ par billet.
+
+--
+
+- **Mais le billet coûte 2$!**
+
+--
+
+| Bénéfice    |       298$      |        -2$        |  Somme |
+|-------------|:---------------:|:-----------------:|:------:|
+| Probabilité | $\frac{1}{200}$ | $\frac{199}{200}$ |    1   |
+| Espérance   |      1,49$      |       -1,99$      | -0,50$ |
+
+- On perd donc 0,50$ à chaque achat de billet.
+
+---
+
+## Cash WinFall : les probabilités
+
+- Les 6 numéros: $\dfrac{\binom{6}{6}}{\binom{46}{6}}= \dfrac{1}{9\ 366\ 819}$
+
+- 5 numéros sur 6: $\dfrac{\binom{6}{5}\binom{40}{1}}{\binom{46}{6}}= \dfrac{240}{9\ 366\ 819} \approx \dfrac{1}{39\ 028,41}$
+
+- 4 numéros sur 6: $\dfrac{\binom{6}{4}\binom{40}{2}}{\binom{46}{6}}= \dfrac{11\ 700}{9\ 366\ 819} \approx \dfrac{1}{800,58}$
+
+- 3 numéros sur 6: $\dfrac{\binom{6}{3}\binom{40}{3}}{\binom{46}{6}}= \dfrac{11\ 700}{9\ 366\ 819} \approx \dfrac{1}{47,40}$
+
+- 2 numéros sur 6: $\dfrac{\binom{6}{2}\binom{40}{4}}{\binom{46}{6}}= \dfrac{1\ 370\ 850}{9\ 366\ 819} \approx \dfrac{1}{6,83}$
+
+---
+
+## Cash WinFall
+
 | Nombre de numéros | Probabilité              | Prix           |
 |-------------------|--------------------------|----------------|
 | Les 6 numéros     | 1 chance sur 9,3 million | Variable       |
@@ -172,6 +211,14 @@ $$\binom{5}{3}=C_3^5=\dfrac{5!}{3!(5-3)!}=10$$
 | 4 numéros sur 6   | 1 chance sur 800,58      | 150$           |
 | 3 numéros sur 6   | 1 chance sur 47,40       | 5$             |
 | 2 numéros sur 6   | 1 chance sur 6,83        | Billet gratuit |
+
+$$\dfrac{1\ 000\ 000\$}{9\ 300\ 000}+\dfrac{4\ 000\$}{39\ 028,41}+\dfrac{150\$}{800,58}+\dfrac{5\$}{47,40}+\dfrac{2\$}{6,83}=0,80\$$$
+
+--
+
+.center[
+# 0,80$
+]
 
 ---
 

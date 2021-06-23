@@ -31,9 +31,7 @@ options(htmltools.dir.version = FALSE)
 
 - Le gros lot est gagné si les $k$ numéros choisis par l'acheteur sont ceux pigés.
 
-- D'autres lots peuvent être gagnés en ayant choisi $l$ numéros pigés avec $l<k$.
-
-- La loterie qui nous intéresse est du type 6/46.
+- D'autres lots peuvent être gagnés en ayant choisi $l$ numéros parmi les $k$ pigés, avec $l<k$.
 
 ---
 class: center, middle
@@ -49,6 +47,8 @@ class: center, middle
 - **CASH WinFall** est une loterie de l'état du Massachusets qui a remplacé la loterie **Mass Millions** le 9 septembre 2004.
 
 - La première pige s'est déroulée le 13 septembre de la même année. La dernière pige a eue lieu le 26 janvier 2012.
+
+- C'est une loterie du type 6/46.
 
 - Le prix d'un billet était de 2$ US.
 
@@ -66,6 +66,102 @@ class: center, middle
 class: inverse, center, middle
 
 # Un peu de probabilités
+
+---
+
+## Les combinaisons
+
+- En mathématiques, une combinaison est une sélection d'objets choisis parmi une collection, de telle manière à ce que l'ordre de sélection n'a pas d'importance.
+
+- Plus formellement, une $k$-combinaison d'un ensemble $S$ est un sous-ensemble de $k$ éléments distincts de $S$. Si l'ensemble possède $n$ éléments, le nombre de $k$-combinaisons est égal au coefficient binomial.
+
+- Le coefficient binomial est noté $\binom{n}{k}=C_k^n=\dfrac{n!}{k!(n-k)!}$.
+
+---
+
+## Une combinaison de 3 parmi 5
+
+$$\binom{5}{3}=C_3^5=\dfrac{5!}{3!(5-3)!}=10$$
+
+```{tikz,tikz-coefficient-binomial,fig.align="center",cache=TRUE,echo=FALSE}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=0.25]
+
+\foreach \i in {1,2,...,5}{
+	\node[above] at ($(\i,0)+(0.5,1)$) {\small\i};
+}
+
+\foreach \j [evaluate={\k=int(-1*\j+1)}] in {0,-1,...,-9}{
+	\node[left,text=lightgray] at ($(1,\j)+(0,0.5)$) {\small\k};
+}
+
+
+\foreach \j in {0,-1,...,-9}{
+	\foreach \i in {1,2,...,5}{
+		\draw[thick] (\i,\j) rectangle++ (1,1);
+	}
+}
+
+\foreach \i/\j/\k/\h in {
+	1/2/3/0,
+	1/2/4/-1,
+	1/2/5/-2,
+	1/3/4/-3,
+	1/3/5/-4,
+	1/4/5/-5,
+	2/3/4/-6,
+	2/3/5/-7,
+	2/4/5/-8,
+	3/4/5/-9
+}{
+	\draw[thick,fill=red] (\i,\h) rectangle++ (1,1);
+	\draw[thick,fill=red] (\j,\h) rectangle++ (1,1);
+	\draw[thick,fill=red] (\k,\h) rectangle++ (1,1);
+}
+
+\begin{scope}[xshift=6cm]
+
+\foreach \j in {0,-1,...,-9}{
+	\foreach \i in {1,2,3}{
+		\draw[thick] (\i,\j) rectangle++ (1,1);
+	}
+}
+
+\foreach \i/\j/\k/\h in {
+	1/2/3/0,
+	1/2/4/-1,
+	1/2/5/-2,
+	1/3/4/-3,
+	1/3/5/-4,
+	1/4/5/-5,
+	2/3/4/-6,
+	2/3/5/-7,
+	2/4/5/-8,
+	3/4/5/-9
+}{
+	\node at ($(1,\h)+(0.5,0.5)$) {\small\i};
+	\node at ($(2,\h)+(0.5,0.5)$) {\small\j};
+	\node at ($(3,\h)+(0.5,0.5)$) {\small\k};
+}
+
+\end{scope}
+
+\end{tikzpicture}
+```
+
+---
+
+## L'espérance mathématique
+
+- En théorie des probabilités, l'espérance mathématique d'une variable aléatoire réelle est, intuitivement, la valeur que l'on s'attend à trouver, en moyenne, si l'on répète un grand nombre de fois la même expérience aléatoire. 
+
+- Elle se note $E(X)$.
+
+- Elle correspond à une moyenne pondérée des valeurs que peut prendre cette variable. 
+
+- Dans le cas où celle-ci prend un nombre fini de valeurs, il s'agit d'une moyenne pondérée par les probabilités d'apparition de chaque valeur.
+
+- Si la variable X prend les valeurs $x_1$, $x_2$, ..., $x_n$ avec les probabilités $p_1$, $p_2$, ..., $p_n$, l'espérance de X est définie comme: $$E(X)=x_1p_1+x_2p_2+\ldots+x_np_n$$
 
 ---
 

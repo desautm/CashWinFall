@@ -12,7 +12,7 @@ output:
       countIncrementalSlides: false
 ---
 
-background-image: url(http://www.global-lottery-review.com/images/MassLotteryCashWinfallAt80.gif)
+background-image: url(https://www.onlinecasinoreports.com/images/cashwinfall.jpg)
 background-size: contain
 
 ```{r setup, include=FALSE}
@@ -66,6 +66,117 @@ class: center, middle
 class: inverse, center, middle
 
 # Un peu de probabilités
+
+---
+
+## Les probabilités
+
+- La probabilité d'un certain événement $A$, notée {$P(A)$, associe une valeur entre 0 et 1 que l'événement se réalise.
+
+- Lorsque $P(A)=1$, l'événement est dit presque sûr (ou quasi certain), c'est-à-dire qu'il a « toutes les chances » de se réaliser. 
+
+- À l'inverse si $P(A)=0$, $A$ est dit négligeable (ou quasi impossible), c'est-à-dire qu'il a une chance nulle de se réaliser.
+
+- Lorsque le nombre de résultats possibles de l'expérience est fini et que ces résultats sont équiprobables, la probabilité de $A$ est obtenue par : $$ P(A)=\dfrac{\text{nombre de cas où $A$ se réalise}}{\text{nombre de cas possibles}} $$
+
+---
+
+## Le lancer de deux dés à six faces
+
+- On lance deux dés non biaisé à six faces.
+
+- On calcule la somme des deux dés.
+
+- Quelle est la probabilité d'obtenir 7?
+
+---
+
+```{tikz,tikz-two-dice,fig.align="center",cache=TRUE,echo=FALSE}
+\newcommand{\dice}[3]{
+\begin{tikzpicture}[scale=#3]
+	\draw[rounded corners=1,#2,thick] (0,0) rectangle (1,1);
+	\ifnum#1<7% "standard die"
+  	\ifodd#1
+    	\fill[#2] (0.5,0.5) circle(2.5pt);% 1,3,5,7,9
+  	\fi
+  	\ifnum#1>1
+    	\fill[#2] (0.2,0.2) circle(2.5pt);% 2
+    	\fill[#2] (0.8,0.8) circle(2.5pt);% 3
+    	\ifnum#1>3
+      		\fill[#2] (0.2,0.8) circle(2.5pt);% 4
+      		\fill[#2] (0.8,0.2) circle(2.5pt);% 5
+      	\ifnum#1>5
+        	\fill[#2] (0.8,0.5) circle(2.5pt);% 5
+        	\fill[#2] (0.2,0.5) circle(2.5pt);% 6
+        \fi
+      \fi
+    \fi
+  \fi
+\end{tikzpicture}
+}
+\begin{tikzpicture}[scale=0.75]
+
+\foreach \i in {1,2,3,4,5,6}{
+  \node[above] at (\i,6.5) {\dice{\i}{red}{0.5}};
+  \node[left] at (0.5,7-\i) {\dice{\i}{blue}{0.5}};
+  \foreach[evaluate={\k=int(\i+\j)}] \j in {1,2,3,4,5,6}{
+      \node at (\i,7-\j) {\k};
+  }
+}
+
+\end{tikzpicture}
+```
+
+---
+
+```{tikz,tikz-two-dice-red,fig.align="center",cache=TRUE,echo=FALSE}
+\newcommand{\dice}[3]{
+\begin{tikzpicture}[scale=#3]
+	\draw[rounded corners=1,#2,thick] (0,0) rectangle (1,1);
+	\ifnum#1<7% "standard die"
+  	\ifodd#1
+    	\fill[#2] (0.5,0.5) circle(2.5pt);% 1,3,5,7,9
+  	\fi
+  	\ifnum#1>1
+    	\fill[#2] (0.2,0.2) circle(2.5pt);% 2
+    	\fill[#2] (0.8,0.8) circle(2.5pt);% 3
+    	\ifnum#1>3
+      		\fill[#2] (0.2,0.8) circle(2.5pt);% 4
+      		\fill[#2] (0.8,0.2) circle(2.5pt);% 5
+      	\ifnum#1>5
+        	\fill[#2] (0.8,0.5) circle(2.5pt);% 5
+        	\fill[#2] (0.2,0.5) circle(2.5pt);% 6
+        \fi
+      \fi
+    \fi
+  \fi
+\end{tikzpicture}
+}
+\begin{tikzpicture}[scale=0.75]
+
+\foreach \i in {1,2,3,4,5,6}{
+  \node[above] at (\i,6.5) {\dice{\i}{red}{0.5}};
+  \node[left] at (0.5,7-\i) {\dice{\i}{blue}{0.5}};
+  \foreach[evaluate={\k=int(\i+\j)}] \j in {1,2,3,4,5,6}{
+      \ifnum\k=7{\node[text=red] at (\i,7-\j) {\large \k};}
+      \else{\node at (\i,7-\j) {\k};}
+      \fi
+  }
+}
+
+\end{tikzpicture}
+```
+---
+
+## Le lancer de deux dés à six faces
+
+- On lance deux dés non biaisé à six faces.
+
+- On calcule la somme des deux dés.
+
+- Quelle est la probabilité d'obtenir 7?
+
+$$P(\text{obtenir une somme de 7})=\frac{6}{36}=\frac{1}{6}$$
 
 ---
 
@@ -179,12 +290,14 @@ $$\binom{5}{3}=C_3^5=\dfrac{5!}{3!(5-3)!}=10$$
 
 --
 
-| Bénéfice    |       298$      |        -2$        |  Somme |
-|-------------|:---------------:|:-----------------:|:------:|
-| Probabilité | $\frac{1}{200}$ | $\frac{199}{200}$ |    1   |
-| Espérance   |      1,49$      |       -1,99$      | -0,50$ |
+| Résultat          | Probabilité                       | Prix           |
+|-------------------|:---------------------------------:|:--------------:|
+| Le gros lot       | $\frac{1}{200}$                   | 300$           |
+| Rien              | $\frac{199}{200}$                 | 0$             |
 
-- On perd donc 0,50$ à chaque achat de billet.
+$$ \dfrac{300\$\times 1}{200}+\dfrac{0\$\times 199}{200} = 1,50\$ $$
+
+- Puisque le billet coûte 2$, on perd donc 0,50$ à chaque achat de billet.
 
 ---
 
@@ -196,7 +309,7 @@ $$\binom{5}{3}=C_3^5=\dfrac{5!}{3!(5-3)!}=10$$
 
 - 4 numéros sur 6: $\dfrac{\binom{6}{4}\binom{40}{2}}{\binom{46}{6}}= \dfrac{11\ 700}{9\ 366\ 819} \approx \dfrac{1}{800,58}$
 
-- 3 numéros sur 6: $\dfrac{\binom{6}{3}\binom{40}{3}}{\binom{46}{6}}= \dfrac{11\ 700}{9\ 366\ 819} \approx \dfrac{1}{47,40}$
+- 3 numéros sur 6: $\dfrac{\binom{6}{3}\binom{40}{3}}{\binom{46}{6}}= \dfrac{197\ 600}{9\ 366\ 819} \approx \dfrac{1}{47,40}$
 
 - 2 numéros sur 6: $\dfrac{\binom{6}{2}\binom{40}{4}}{\binom{46}{6}}= \dfrac{1\ 370\ 850}{9\ 366\ 819} \approx \dfrac{1}{6,83}$
 
@@ -204,21 +317,81 @@ $$\binom{5}{3}=C_3^5=\dfrac{5!}{3!(5-3)!}=10$$
 
 ## Cash WinFall
 
-| Nombre de numéros | Probabilité              | Prix           |
-|-------------------|--------------------------|----------------|
-| Les 6 numéros     | 1 chance sur 9,3 million | Variable       |
-| 5 numéros sur 6   | 1 chance sur 39 028,41   | 4 000$         |
-| 4 numéros sur 6   | 1 chance sur 800,58      | 150$           |
-| 3 numéros sur 6   | 1 chance sur 47,40       | 5$             |
-| 2 numéros sur 6   | 1 chance sur 6,83        | Billet gratuit |
+| Nombre de numéros | Probabilité                       | Prix           |
+|-------------------|-----------------------------------|----------------|
+| Les 6 numéros     | $\frac{1}{9\ 366\ 819}$           | Variable       |
+| 5 numéros sur 6   | $\frac{240}{9\ 366\ 819}$         | 4 000$         |
+| 4 numéros sur 6   | $\frac{11\ 700}{9\ 366\ 819}$     | 150$           |
+| 3 numéros sur 6   | $\frac{197\ 600}{9\ 366\ 819}$    | 5$             |
+| 2 numéros sur 6   | $\frac{1\ 370\ 850}{9\ 366\ 819}$ | Billet gratuit |
 
-$$\dfrac{1\ 000\ 000\$}{9\ 300\ 000}+\dfrac{4\ 000\$}{39\ 028,41}+\dfrac{150\$}{800,58}+\dfrac{5\$}{47,40}+\dfrac{2\$}{6,83}=0,80\$$$
+$$
+\begin{align*}
+& \dfrac{1\ 000\ 000\$}{9\ 366\ 819}+\dfrac{4\ 000\$ \times 240}{9\ 366\ 819}+\dfrac{150\$\times 11\ 700}{9\ 366\ 819}+\dfrac{5\$ \times 197\ 600}{9\ 366\ 819}+\\
+& \qquad \qquad \qquad +\dfrac{2\$ \times 1\ 370\ 850}{9\ 366\ 819}\approx 0,7948\$
+\end{align*}
+$$
 
 --
 
 .center[
-# 0,80$
+# Environ 0,80$, on perd donc 1,20$ par billet
 ]
+
+---
+
+class:inverse, center, middle
+
+# Pourquoi parler de CashWinFall?
+
+---
+
+## Le "Roll-Down"
+
+- Le gros lot débutait à 500 000$.
+
+- Lorsque le gros lot n'était pas gagné, celui-ci était ajouté au gros lot suivant.
+
+- Le gros lot était par contre d'un maximum de 2 000 000$.
+
+- Si le gros lot atteignait 2 000 000$ et que personne ne le gagnait, *une partie de l'argent du gros lot était redistribué aux lots de moindre valeur*.
+
+---
+
+## Le "Roll-Down" du 8 février 2010
+
+| Nombre de numéros | Probabilité                       | Prix habituel  | Prix "roll-down" |
+|-------------------|-----------------------------------|----------------|------------------|
+| Les 6 numéros     | $\frac{1}{9\ 366\ 819}$           | Variable       | pas gagné        |
+| 5 numéros sur 6   | $\frac{240}{9\ 366\ 819}$         | 4 000$         | 22 096$          |
+| 4 numéros sur 6   | $\frac{11\ 700}{9\ 366\ 819}$     | 150$           | 807,52$          |
+| 3 numéros sur 6   | $\frac{197\ 600}{9\ 366\ 819}$    | 5$             | 26,85$           |
+| 2 numéros sur 6   | $\frac{1\ 370\ 850}{9\ 366\ 819}$ | Billet gratuit | Billet gratuit   |
+
+$$
+\begin{align*}
+\dfrac{22\ 096\$ \times 240}{9\ 366\ 819}+\dfrac{807,52\$\times 11\ 700}{9\ 366\ 819}+\dfrac{26,85\$ \times 197\ 600}{9\ 366\ 819} \approx 2,14\$
+\end{align*}
+$$
+
+.center[
+## Un billet rapporte donc en "moyenne" 0,14$!
+]
+
+---
+
+## Le "Roll-Down" du 8 février 2010
+
+### Supposons que nous achetions 200 000 billets
+
+| Résultats | Prix habituel  | Prix "roll-down" | Nombre (arrondi) de billets gagnants attendus sur 200 000 | Revenu attendu |
+|-----------|----------------|------------------|-----------------------------------------------------------|----------------|
+| Les 6     | Variable       | pas gagné        |                                                           |                |
+| 5 sur 6   | 4 000$         | 22 096$          | 5 | 110 480$ |
+| 4 sur 6   | 150$           | 807,52$          | 250 | 201 880$ |
+| 3 sur 6   | 5$             | 26,85$           | 4219 | 113 280$ |
+| 2 sur 6   | Billet gratuit | Billet gratuit   | 29 283 | |
+|           |                |                  |        | Total = 425 640$ | 
 
 ---
 

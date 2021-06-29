@@ -71,7 +71,7 @@ class: inverse, center, middle
 
 ## Les probabilités
 
-- La probabilité d'un certain événement $A$, notée {$P(A)$, associe une valeur entre 0 et 1 que l'événement se réalise.
+- La probabilité d'un certain événement $A$, notée $P(A)$, associe une valeur entre 0 et 1 que l'événement se réalise.
 
 - Lorsque $P(A)=1$, l'événement est dit presque sûr (ou quasi certain), c'est-à-dire qu'il a « toutes les chances » de se réaliser. 
 
@@ -380,18 +380,33 @@ $$
 
 ---
 
-## Le "Roll-Down" du 8 février 2010
+## Supposons que nous achetions 200 000 billets
 
-### Supposons que nous achetions 200 000 billets
+- Supposons que le gros lot n'est pas gagné.
 
-| Résultats | Prix habituel  | Prix "roll-down" | Nombre (arrondi) de billets gagnants attendus sur 200 000 | Revenu attendu |
-|-----------|----------------|------------------|-----------------------------------------------------------|----------------|
-| Les 6     | Variable       | pas gagné        |                                                           |                |
-| 5 sur 6   | 4 000$         | 22 096$          | 5 | 110 480$ |
-| 4 sur 6   | 150$           | 807,52$          | 250 | 201 880$ |
-| 3 sur 6   | 5$             | 26,85$           | 4219 | 113 280$ |
-| 2 sur 6   | Billet gratuit | Billet gratuit   | 29 283 | |
-|           |                |                  |        | Total = 425 640$ | 
+- On s'attend à avoir environ 5 billets avec 5 des 6 numéros gagnants pour un revenu attendu de 110 480$.
+
+- On s'attend à avoir environ 250 billets avec 4 des 6 numéros gagnants pour un revenu attendu de 201 880$.
+
+- On s'attend à avoir environ 4 219 billets avec 3 des 6 numéros gagnants pour un revenu attendu de 113 280$.
+
+- On s'attend donc à un revenu total de 425 640$.
+
+- On s'attend à avoir environ 29 283 billets avec 2 des 6 numéros gagnants, ce qui implique 29 283 billets gratuits pour la prochaine loterie, donc une économie de 58 566$!
+
+---
+
+## Supposons que nous achetions 200 000 billets
+
+- Pour un investissement de 400 000$ (les billets coûtent 2$).
+
+- Un revenu de 425 640$, ce qui implique un profit de 6,41% sur l'investissement de départ.
+
+- Si on réutilise les 29 283 billets gratuits, qui représentent une économie  de 58 566$, on peut acheter 200 000 billets pour un prix de 341 434$.
+
+- Si on suppose de recevoir le même revenu au prochain tirage, ça représente un profit de 84 206$ ou 24,66% de l'investissement initial!
+
+- Bien sûr, il y a le risque que le gros lot soit gagné...
 
 ---
 

@@ -1,0 +1,19 @@
+---
+title: "Comment gagner de l'argent sans se fatiguer."
+author: "Marc-André Désautels"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Au début des années 2000, la *Michigan State Lottery* crée une nouvelle loterie, *Cash WinFall*. En raison d'un mécanisme nouveau ayant pour but d'inciter davantage de gens à jouer à cette loterie, deux groupes de personnes se mettent à acheter des dizaines de milliers de billets:
+
+a) Un retraité du Michigan nommé Gerard Selbee dirigeant un groupe "d'investisseurs".
+
+a) Un groupe d'étudiants du MIT (Massachusets Institute of Technology) qui s'appelaient "Random Strategies", dirigés par James Harvey.
+
+Mais pourquoi ces deux groupes ont-ils achetés autant de billets? Nous verrons que le *mécanisme nouveau* de cette loterie signifiait qu'à certains moments, acheter un billet impliquait une **espérance mathématique positive**! Donc, si vous achetiez beaucoup (beaucoup!) de billets à ces moments, vous alliez probablement faire beaucoup d'argent.
+
+Nous expliquerons comment ce mécanisme nouveau permettait de gagner de l'argent à certains moments, les tactiques différentes employées par ces deux groupes d'investisseurs et de quelle manière il est possible de diminuer la variance des résultats.

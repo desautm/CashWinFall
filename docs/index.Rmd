@@ -362,7 +362,7 @@ class:inverse, center, middle
 
 | Nombre de numéros | Probabilité                       | Prix habituel  | Prix "roll-down" |
 |-------------------|-----------------------------------|----------------|------------------|
-| Les 6 numéros     | $\frac{1}{9\ 366\ 819}$           | Variable       | pas gagné        |
+| Les 6 numéros     | $\frac{1}{9\ 366\ 819}$           | Variable       | Pas gagné        |
 | 5 numéros sur 6   | $\frac{240}{9\ 366\ 819}$         | 4 000$         | 22 096$          |
 | 4 numéros sur 6   | $\frac{11\ 700}{9\ 366\ 819}$     | 150$           | 807,52$          |
 | 3 numéros sur 6   | $\frac{197\ 600}{9\ 366\ 819}$    | 5$             | 26,85$           |
@@ -417,4 +417,93 @@ background-size: contain
 
 Image credit: [Huffington Post](https://highline.huffingtonpost.com/articles/en/lotto-winners/)
 
+---
+
+## Gerard Selbee
+
+TO DO: BIOGRAPHIE RAPIDE
+
+CHOISIS SES BILLETS ALÉATOIREMENT
+
+---
+
+## RANDOM STRATEGIES INVESTMENTS, LLC
+
+```{r, RSI, echo=FALSE, out.width="60%"}
+knitr::include_graphics("fig/random_strategy_investment.PNG")
+```
+
+---
+
+## James Harvey
+
+TO DO: BIOGRAPHIE RAPIDE
+
+CHOISIS SES BILLETS NON-ALÉATOIREMENT
+
+---
+
+class:inverse, center, middle
+
+# La loterie Transylvanienne
+
+---
+
+## Le plan de Fano
+
+```{tikz,fano-plane,echo=FALSE,fig.align="center",cache=TRUE}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=2]
+
+\def\r{2}
+
+\coordinate (A) at (0,0);
+\coordinate (B) at (\r,0);
+\coordinate (C) at ($ (A)!.5!(B) ! {sin(60)*2} ! 90:(B) $);
+\coordinate (O) at (barycentric cs:A=1,B=1,C=1);
+
+\coordinate (LA) at ($ (B)!.5!(C) $);
+\coordinate (LB) at ($ (A)!.5!(C) $);
+\coordinate (LC) at ($ (A)!.5!(B) $);
+
+\draw[thick,green] (A)--(B);
+\draw[thick,blue] (B)--(C);
+\draw[thick,red] (A)--(C);
+
+\draw[thick,yellow] (A)--(LA);
+\draw[thick,cyan] (B)--(LB);
+\draw[thick,magenta] (C)--(LC);
+
+\draw[thick] (O) circle [radius=\r*1.717/6];
+
+\fill[green]  (A) circle (2pt);
+\fill[yellow] (A) circle (1.5pt);
+\fill[red]    (A) circle (1pt);
+
+\fill[green]  (B) circle (2pt);
+\fill[blue]   (B) circle (1.5pt);
+\fill[cyan]   (B) circle (1pt);
+
+\fill[magenta](C) circle (2pt);
+\fill[blue]   (C) circle (1.5pt);
+\fill[red]    (C) circle (1pt);
+
+\fill[yellow] (O) circle (2pt);
+\fill[magenta](O) circle (1.5pt);
+\fill[cyan]   (O) circle (1pt);
+
+\fill[black]  (LA) circle (2pt);
+\fill[yellow] (LA) circle (1.5pt);
+\fill[blue]   (LA) circle (1pt);
+
+\fill[black]  (LB) circle (2pt);
+\fill[cyan]   (LB) circle (1.5pt);
+\fill[red]    (LB) circle (1pt);
+
+\fill[black]  (LC) circle (2pt);
+\fill[green]  (LC) circle (1.5pt);
+\fill[magenta](LC) circle (1pt);
+
+\end{tikzpicture}
+```
 

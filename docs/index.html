@@ -313,9 +313,110 @@ CHOISIS SES BILLETS NON-ALÉATOIREMENT
 
 ---
 
+background-image: url(fig/attorney-general.PNG)
+background-size: contain
+
+---
+
+## Deux questions...
+
+--
+
+- ### Question 1: Comment ont-ils fait pour ne pas se faire attraper? Comment se fait-il que l'état du Massachusets n'ait pas été au courant?
+
+--
+
+- ### Réponse: L'état *était* au courant!
+
+--
+
+- ### Question 2: Devrait-on remplir les billets à la main ou laisser choisir aléatoirement l'ordinateur?
+
+--
+
+- ### Réponse: Le paradoxe des anniversaires et la loterie transylvanienne
+
+---
+
+class:inverse, center, middle
+
+# Le paradoxe des anniversaires
+
+---
+
+## Le paradoxe des anniversaires
+
+- Le paradoxe des anniversaires résulte de l'estimation probabiliste du nombre de personnes que l'on doit réunir pour avoir au moins une chance sur deux que deux personnes de ce groupe aient leur anniversaire le même jour. 
+
+- Il se trouve que ce nombre est 23, ce qui choque un peu l'intuition. 
+
+- À partir d'un groupe de 57 personnes, la probabilité est supérieure à 99 %.
+
+- Il s'agit d'un paradoxe non pas dans le sens de contradiction logique, mais dans le sens où c'est une vérité mathématique qui contredit l'intuition : la plupart des gens estiment que cette probabilité est très inférieure à 50 %.
+
+---
+
+## Le paradoxe des anniversaires
+
+- On va calculer la probabilité que chaque personne ait un jour anniversaire *différent* de celui des autres : le contraire de ce que l’on cherche.
+
+- Nous faisons une hypothèse d'équiprobabilité des jours de naissance.
+
+- Nous allons compter le nombre de cas où `\(n\)` personnes ont des jours d'anniversaires différents et nous diviserons par le nombre de possibilités.
+
+- Il y a `\(n\)` personnes, pour chacune il y a 365 jours possibles, donc au total si on ne se fixe aucune contrainte, il y a `\(365^n\)` possibilités.
+
+- La première personne a 365 choix, la seconde 364, la troisième 363 et ainsi de suite.
+
+$$
+`\begin{aligned}
+\overline{p}(n)=\frac{365}{365}\cdot\frac{364}{365}\cdot\frac{363}{365}\cdot\cdot\cdot\frac{365-n+1}{365}
+\end{aligned}`
+$$
+
+- Or, l’évènement « un jour anniversaire différent par personne » est le complémentaire de « au moins deux identiques ». Par conséquent la probabilité recherchée est `\(p(n)=1-\overline {p}(n)\)`.
+
+---
+
+## Le paradoxe des anniversaires
+
+![](index_files/figure-html/paradoxe-anniversaires-1.svg)&lt;!-- --&gt;
+
+---
+
+## La stratégie de Selbee
+
+![](index_files/figure-html/paradoxe-cashwinfall-1.svg)&lt;!-- --&gt;
+
+
+---
+
+## Anecdote
+
+&gt; Dans Le Livre qui rend fou, Raymond Smullyan raconte qu'il a fait établir la formule à ses 19 élèves. Il conclut après application numérique qu'il y a nettement moins d'une chance sur deux (un peu moins de 38 %) pour que deux élèves aient leur anniversaire le même jour. Un élève lui répond qu'il parie que c'est tout de même le cas. Le professeur fait l'appel en demandant aux élèves de donner leur date de naissance, et éclate de rire avant la fin, suivi de toute la classe, en se souvenant que deux de ses élèves sont jumeaux.
+
+---
+
 class:inverse, center, middle
 
 # La loterie Transylvanienne
+
+---
+
+class:inverse, center, middle
+
+&lt;img src="https://media.giphy.com/media/rZ1m60AnwOclG/giphy.gif" width="800"&gt;
+
+---
+
+## La loterie transylvanienne
+
+- C'est une loterie du type 3/14; c'est-à-dire que trois nombres sont choisis aléatoirement (sans remise) entre 1 et 14 inclusivement.
+
+- Le joueur gagne si deux des trois nombres sur un certain billet sont parmis ceux choisis aléatoirement.
+
+- Nous désirons savoir combien de billets le joueur doit acheter pour être certain de gagner.
+
 
 ---
 

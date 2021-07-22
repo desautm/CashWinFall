@@ -7,6 +7,8 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
@@ -380,14 +382,122 @@ $$
 
 ## Le paradoxe des anniversaires
 
-![](index_files/figure-html/paradoxe-anniversaires-1.svg)&lt;!-- --&gt;
+
+
+![](index_files/figure-html/paradoxe-anniversaires-plot1-1.svg)&lt;!-- --&gt;
+
+---
+
+## Le paradoxe des anniversaires
+
+![](index_files/figure-html/paradoxe-anniversaires-plot2-1.svg)&lt;!-- --&gt;
+
+---
+
+## Le paradoxe des anniversaires
+
+&lt;table class="table table-striped table-hover table-condensed" style="font-size: 16px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Probabilités &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0271356 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1169482 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2529013 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4114384 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5072972 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5686997 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7063162 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 40 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8912318 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.9703736 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 60 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.9941227 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 80 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.9999143 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 100 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.9999997 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 200 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.0000000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 300 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.0000000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 365 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.0000000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
 ## La stratégie de Selbee
 
-![](index_files/figure-html/paradoxe-cashwinfall-1.svg)&lt;!-- --&gt;
+- On utilise la même stratégie que pour le paradoxe des anniversaires.
 
+- Il y a `\(n\)` billets, pour chacun il y a `\(\binom{46}{6}=\)` 9 366 819 billets possibles, donc au total si on ne se fixe aucune contrainte, il y a `\((9\ 366\ 819)^n\)` possibilités.
+
+- Le première billet a 9 366 819 choix, le second 9 366 818, le troisième 9 366 817 et ainsi de suite.
+
+$$
+`\begin{aligned}
+\overline{p}(n)=\frac{9\ 366\ 819}{9\ 366\ 819}\cdot\frac{9\ 366\ 818}{9\ 366\ 819}\cdot\frac{9\ 366\ 817}{9\ 366\ 819}\cdot\cdot\cdot\frac{9\ 366\ 819-n+1}{9\ 366\ 819}
+\end{aligned}`
+$$
+
+- Or, l’évènement « un billet différent à chaque achat » est le complémentaire de « au moins deux billets identiques ». Par conséquent la probabilité recherchée est `\(p(n)=1-\overline {p}(n)\)`.
+
+---
+
+## La stratégie de Selbee
+
+
+
+![](index_files/figure-html/paradoxe-cashwinfall-plot1-1.svg)&lt;!-- --&gt;
+
+---
+
+## La stratégie de Selbee
+
+![](index_files/figure-html/paradoxe-cashwinfall-plot2-1.svg)&lt;!-- --&gt;
 
 ---
 

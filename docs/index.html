@@ -7,6 +7,11 @@
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"eaa19ef28a8b464db789d8ce02bdb692","expires":1}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
     <script src="libs/kePrint/kePrint.js"></script>
     <link href="libs/lightable/lightable.css" rel="stylesheet" />
   </head>
@@ -24,6 +29,8 @@ class: center, middle, inverse, title-slide
 
 background-image: url(https://www.onlinecasinoreports.com/images/cashwinfall.jpg)
 background-size: contain
+
+
 
 
 
@@ -728,23 +735,168 @@ class:center, middle
 
 - Le joueur gagne si deux (ou trois) des trois nombres sur un certain billet sont parmis ceux choisis aléatoirement.
 
-- Nous gagnons 6$ si nous avons les trois nombres.
+- Nous gagnons 6$ si nous avons les trois nombres (nous appelerons ce résultat un **trio**).
 
-- Nous gagnons 2$ si nous avons deux nombres sur trois.
+- Nous gagnons 2$ si nous avons deux nombres sur trois (nous appelerons ce résultat un **duo**).
 
 - Nous ne gagnons rien si nous avons un nombre ou moins sur trois.
 
 ---
 
-class: inverse, center, middle
+## Probabilités si nous choisissons 7 billets
 
-## Nous allons tout le monde choisir 7 billets différents en respectant les règles de la loterie transylvanienne, c'est-à-dire choisir trois nombres sans remise entre 1 et 7 inclusivement.
 
-## Celui qui fait le plus *d'argent* gagne...
+
+.pull-left[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Vous obtenez &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Avec une probabilité de &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Et un prix de &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 0 duo &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0529198 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 duo &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1932725 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.39 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 duos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3025134 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $1.21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 duos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2630552 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $1.58 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 duos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1372462 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $1.10 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 duos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0429640 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.43 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 duos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0074720 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.09 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 7 duos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0005569 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.01 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Vous obtenez donc 4.8 $ en moyenne avec vos duos.
+]
+
+.pull-right[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Vous obtenez &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Avec une probabilité de &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Et un prix de &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 0 trio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8163495 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 trio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1680719 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $1.01 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 trios &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0148299 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 trios &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0007270 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.01 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 trios &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000214 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 trios &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000004 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 trios &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 7 trios &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $0.00 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Vous obtenez donc 1.2 $ en moyenne avec vos trios.
+]
+
+### On s'attend donc à recevoir 6 $ en moyenne en achetant 7 billets.
 
 ---
 
-&lt;iframe src="https://www.random.org/quick-pick/?tickets=1&amp;amp;lottery=3x7.0x26" width="100%" height="400px"&gt;&lt;/iframe&gt;
+class: inverse, center, middle
+
+## Nous allons tout le monde choisir 7 billets en respectant les règles de la loterie transylvanienne, c'est-à-dire choisir trois nombres sans remise entre 1 et 7 inclusivement.
+
+## Pour continuer à jouer, vous devez faire au moins 6$, les autres sont éliminés.
+
+## On recommence avec les joueurs restants jusqu'à ce qu'il ne reste qu'une personne!
+
+---
+
+class: inverse, center, middle
+
+## Choisissez 7 billets (différents ou non) en respectant les règles de la loterie transylvanienne, c'est-à-dire choisir trois nombres sans remise entre 1 et 7 inclusivement.
+
+---
+
+## Voici mes numéros...
+
+# 1-2-5, 1-3-6, 1-4-7, 2-3-7, 2-4-6, 3-4-5 et 5-6-7
+
+
+Nous allons utiliser [www.random.org](https://www.random.org/quick-pick/?tickets=1&amp;lottery=3x7.0x26) pour trouver le billet gagnant. 
+
+Le billet est donc...
+
+.center[
+## .can-edit[X-X-X]
+]
+
+Je gagne donc...
+
+.center[
+## .can-edit[X] $
+]
 
 ---
 

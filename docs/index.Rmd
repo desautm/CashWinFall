@@ -18,6 +18,7 @@ background-size: contain
 ```{r setup, include=FALSE}
 library(tidyverse)
 library(kableExtra)
+library(gtools)
 
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(echo = FALSE)
@@ -667,14 +668,79 @@ class:inverse, center, middle
 
 ---
 
-## La loterie transylvanienne
+## La loterie transylvanienne (version 1)
+
+- C'est une loterie du type 3/7; c'est-à-dire que trois nombres sont choisis aléatoirement (sans remise) entre 1 et 7 inclusivement.
+
+- Le joueur gagne si deux (ou trois) des trois nombres sur un certain billet sont parmis ceux choisis aléatoirement.
+
+- Le nombre de billets différents est de $\binom{7}{3}=$ `r format(choose(7,3),big.mark = " ")`.
+
+- Il est donc possible d'énumérer tous les billets différents.
+
+---
+
+class:center, middle
+
+```{r billets-differents-loterie-1, warning=FALSE, message=FALSE}
+loterie1 <- as_tibble(combinations(7,3,1:7), .name_repair = "unique") 
+colnames(loterie1) <- c("Nombre 1", "Nombre 2", "Nombre 3")
+loterie1 %>% 
+  kbl() %>% 
+  scroll_box(height = "600px")
+```
+
+---
+
+## La loterie transylvanienne (version 1)
+
+- C'est une loterie du type 3/7; c'est-à-dire que trois nombres sont choisis aléatoirement (sans remise) entre 1 et 7 inclusivement.
+
+- Le joueur gagne si deux (ou trois) des trois nombres sur un certain billet sont parmis ceux choisis aléatoirement.
+
+- Nous gagnons 6$ si nous avons les trois nombres.
+
+- Nous gagnons 2$ si nous avons deux nombres sur trois.
+
+- Nous ne gagnons rien si nous avons un nombre ou moins sur trois.
+
+---
+
+class: inverse, center, middle
+
+## Nous allons tout le monde choisir 7 billets différents en respectant les règles de la loterie transylvanienne, c'est-à-dire choisir trois nombres sans remise entre 1 et 7 inclusivement.
+
+## Celui qui fait le plus *d'argent* gagne...
+
+---
+
+```{r random-org-lottery-generator}
+knitr::include_url("https://www.random.org/quick-pick/?tickets=1&lottery=3x7.0x26")
+```
+
+---
+
+## La loterie transylvanienne (version 2)
 
 - C'est une loterie du type 3/14; c'est-à-dire que trois nombres sont choisis aléatoirement (sans remise) entre 1 et 14 inclusivement.
 
 - Le joueur gagne si deux des trois nombres sur un certain billet sont parmis ceux choisis aléatoirement.
 
+- Le nombre de billets différents est de $\binom{14}{3}=$ `r format(choose(14,3),big.mark = " ")`.
+
 - Nous désirons savoir combien de billets le joueur doit acheter pour être certain de gagner.
 
+---
+
+class:center, middle
+
+```{r billets-differents-loterie-2, warning=FALSE, message=FALSE}
+loterie2 <- as_tibble(combinations(14,3,1:14), .name_repair = "unique") 
+colnames(loterie2) <- c("Nombre 1", "Nombre 2", "Nombre 3")
+loterie2 %>% 
+  kbl() %>% 
+  scroll_box(height = "600px")
+```
 
 ---
 

@@ -20,6 +20,7 @@ library(tidyverse)
 library(kableExtra)
 library(gtools)
 library(scales)
+library(here)
 
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(echo = FALSE, cache = TRUE)
@@ -317,6 +318,28 @@ $$ \dfrac{300\$\times 1}{200}+\dfrac{0\$\times 199}{200} = 1,50\$ $$
 
 ---
 
+## La loi binomiale
+
+- La loi binomiale modélise la fréquence du nombre de succès obtenus lors de la répétition de plusieurs expériences aléatoires identiques et indépendantes.
+
+- Soit $n$ le nombre d'expériences et $p$ la probabilité de succès, on la note $X\sim B(n,p)$.
+
+- $P(X=x)=\binom{n}{x} p^x (1-p)^{n-x}$
+
+- $E(X) = np$
+
+---
+
+## La loi hypergéométrique
+
+- On tire simultanément $n$ boules dans une urne contenant $N_1=pN$ boules gagnantes et $N_2=qN$ boules perdantes (avec $q=1-p$). On compte alors le nombre de boules gagnantes extraites.
+
+- $P(X=x) = \dfrac{\binom{pN}{x}\binom{qN}{n-x}}{\binom{N}{n}}$
+
+- $E(X) = np$
+
+---
+
 class: inverse, center, middle
 
 # Cash WinFall
@@ -502,12 +525,7 @@ knitr::include_graphics("fig/random_strategy_investment.PNG")
 
 - Harvey estime que le groupe a fait un profit de 700 000$ cette journée-là.
 
-CHOISIS SES BILLETS NON-ALÉATOIREMENT
-
----
-
-background-image: url(fig/attorney-general.PNG)
-background-size: contain
+- JAMES HARVEY CHOISISSAIT SES BILLETS NON-ALÉATOIREMENT!
 
 ---
 
@@ -521,7 +539,18 @@ background-size: contain
 
 - ### Réponse: L'état *était* au courant!
 
---
+---
+
+background-image: url(fig/attorney-general.PNG)
+background-size: contain
+
+---
+
+## Deux questions...
+
+- ### Question 1: Comment ont-ils fait pour ne pas se faire attraper? Comment se fait-il que l'état du Massachusets n'ait pas été au courant?
+
+- ### Réponse: L'état *était* au courant!
 
 - ### Question 2: Devrait-on remplir les billets à la main ou laisser choisir aléatoirement l'ordinateur?
 
@@ -1004,6 +1033,7 @@ loterie2 %>%
 \fill[cyan]   (O) circle (1pt);
 
 \fill[black]  (LA) circle (2pt);
+
 \fill[yellow] (LA) circle (1.5pt);
 \fill[blue]   (LA) circle (1pt);
 
@@ -1016,5 +1046,77 @@ loterie2 %>%
 \fill[magenta](LC) circle (1pt);
 
 \end{tikzpicture}
+```
+
+---
+
+class: inverse, center, middle
+
+# Peut-on trouver un ensemble de billets nous assurant d'obtenir *tous* les billets ayant 5 des 6 numéros choisis?
+
+---
+
+## Denniston
+
+---
+
+background-image: url(fig/denniston.gif)
+background-size: contain
+
+---
+
+```{r denniston, echo=FALSE, warning=FALSE, message=FALSE}
+denniston <- read_csv(here("data","denniston.csv"), col_select = c(1,2,3,4,5,6), col_types = "iiiiii")
+cashwinfall <- denniston %>% 
+  filter(col1 < 47,
+         col2 < 47,
+         col3 < 47,
+         col4 < 47,
+         col5 < 47,
+         col6 < 47)
+
+reject <- denniston %>% 
+  filter( col1 >= 47 | 
+          col2 >= 47 | 
+          col3 >= 47 | 
+          col4 >= 47 | 
+          col5 >= 47 | 
+          col6 >= 47)
+
+reject47 <- reject %>% 
+  filter( col1 == 47 | 
+          col2 == 47 | 
+          col3 == 47 | 
+          col4 == 47 | 
+          col5 == 47 | 
+          col6 == 47)
+
+reject48 <- reject %>% 
+  filter( col1 == 48 | 
+          col2 == 48 | 
+          col3 == 48 | 
+          col4 == 48 | 
+          col5 == 48 | 
+          col6 == 48)
+
+# On calcule le nombre de cas où le nombre 47 est présent
+# On calcule le nombre de cas où le nombre 48 est présent
+# On calcule le nombre de cas où 47 ET 48 sont présents
+# en additionnant n47 et n48 et en soustrayant le nombre
+# de cas rejetés de denniston
+n47 <- nrow(reject47)
+n48 <- nrow(reject48)
+n47_48 <- n47+n48-nrow(reject)
+
+ndenniston <- nrow(denniston)
+ncashwinfall <- nrow(cashwinfall)
+nreject <- nrow(reject)
+```
+
+```{r}
+denniston %>% 
+  head(100) %>% 
+  kbl() %>% 
+  scroll_box(height = "600px")
 ```
 

@@ -910,9 +910,23 @@ loterie2 %>%
 
 ---
 
+class: inverse, center, middle
+
+# Comment choisir les numéros pour s'assurer de gagner?
+
+---
+
 ## Le plan de Fano
 
-```{tikz,fano-plane,echo=FALSE,fig.align="center",cache=TRUE}
+- En géométrie projective finie, le plan de Fano, nommé ainsi d'après le mathématicien Gino Fano, est le plus petit plan projectif fini.
+
+- C'est-à-dire qu'il comporte le plus petit nombre de points et de droites, à savoir 7 de chaque. 
+
+- C'est le seul plan projectif (au sens des axiomes d'incidence) de 7 points, et c'est le plan projectif sur le corps fini à deux éléments.
+
+---
+
+```{tikz,fano-plane-empty,echo=FALSE,fig.align="center",cache=TRUE}
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=2]
 
@@ -966,23 +980,116 @@ loterie2 %>%
 \fill[green]  (LC) circle (1.5pt);
 \fill[magenta](LC) circle (1pt);
 
+\node[left=4pt] at (A)     {\phantom{5}};
+\node[right=4pt] at (B)    {\phantom{6}};
+\node[above=4pt] at (C)    {\phantom{1}};
+\node[right=4pt] at (LA)   {\phantom{3}};
+\node[left=4pt] at (LB)    {\phantom{2}};
+\node[below=4pt] at (LC)   {\phantom{7}};
+\node[left=4pt] at (O)     {\phantom{4}};
+
 \end{tikzpicture}
 ```
 
 ---
 
-class: inverse, center, middle
+```{tikz,fano-plane-contain,echo=FALSE,fig.align="center",cache=TRUE}
+\usetikzlibrary{calc}
+\begin{tikzpicture}[scale=2]
 
-# Peut-on trouver un ensemble de billets nous assurant d'obtenir *tous* les billets ayant 5 des 6 numéros choisis?
+\def\r{2}
+
+\coordinate (A) at (0,0);
+\coordinate (B) at (\r,0);
+\coordinate (C) at ($ (A)!.5!(B) ! {sin(60)*2} ! 90:(B) $);
+\coordinate (O) at (barycentric cs:A=1,B=1,C=1);
+
+\coordinate (LA) at ($ (B)!.5!(C) $);
+\coordinate (LB) at ($ (A)!.5!(C) $);
+\coordinate (LC) at ($ (A)!.5!(B) $);
+
+\draw[thick,green] (A)--(B);
+\draw[thick,blue] (B)--(C);
+\draw[thick,red] (A)--(C);
+
+\draw[thick,yellow] (A)--(LA);
+\draw[thick,cyan] (B)--(LB);
+\draw[thick,magenta] (C)--(LC);
+
+\draw[thick] (O) circle [radius=\r*1.717/6];
+
+\fill[green]  (A) circle (2pt);
+\fill[yellow] (A) circle (1.5pt);
+\fill[red]    (A) circle (1pt);
+
+\fill[green]  (B) circle (2pt);
+\fill[blue]   (B) circle (1.5pt);
+\fill[cyan]   (B) circle (1pt);
+
+\fill[magenta](C) circle (2pt);
+\fill[blue]   (C) circle (1.5pt);
+\fill[red]    (C) circle (1pt);
+
+\fill[yellow] (O) circle (2pt);
+\fill[magenta](O) circle (1.5pt);
+\fill[cyan]   (O) circle (1pt);
+
+\fill[black]  (LA) circle (2pt);
+
+\fill[yellow] (LA) circle (1.5pt);
+\fill[blue]   (LA) circle (1pt);
+
+\fill[black]  (LB) circle (2pt);
+\fill[cyan]   (LB) circle (1.5pt);
+\fill[red]    (LB) circle (1pt);
+
+\fill[black]  (LC) circle (2pt);
+\fill[green]  (LC) circle (1.5pt);
+\fill[magenta](LC) circle (1pt);
+
+\node[left=4pt] at (A)     {5};
+\node[right=4pt] at (B)    {6};
+\node[above=4pt] at (C)    {1};
+\node[right=4pt] at (LA)   {3};
+\node[left=4pt] at (LB)    {2};
+\node[below=4pt] at (LC)   {7};
+\node[left=4pt] at (O)     {4};
+
+\end{tikzpicture}
+```
+
+--
+
+.center[
+## <font color="red">1-2-5</font>, <font color="blue">1-3-6</font>, <font color="magenta">1-4-7</font>, <font color="black">2-3-7</font>, <font color="cyan">2-4-6</font>, <font color="yellow">3-4-5</font>, <font color="green">5-6-7</font>
+]
 
 ---
 
-## Denniston
+class: inverse, center, middle
+
+# Peut-on trouver un ensemble de billets nous assurant d'obtenir *tous* les billets ayant 5 des 6 numéros choisis à CashWinFall?
 
 ---
 
 background-image: url(fig/denniston.gif)
 background-size: contain
+
+---
+
+## R. H. F. Denniston
+
+- Article de 1976 dans le *Bulletin of the London Mathematical Society*.
+
+- Denniston discute d'une nouvelle manière de construire un **système de Steiner**.
+
+- Un système de Steiner de paramètres $t$, $k$ et $n$, noté $S(t,k,n)$, est constitué de:
+
+  - un ensemble $S$ à $n$ éléments;
+  
+  - un ensemble de sous-ensembles de $S$ à $k$ éléments (appelés blocs);
+  
+  - tout sous-ensemble de $S$ à $t$ éléments est contenu dans un bloc et un seul.
 
 ---
 
@@ -1034,10 +1141,44 @@ ncashwinfall <- nrow(cashwinfall)
 nreject <- nrow(reject)
 ```
 
+---
+
+## R. H. F. Denniston
+
+- Le système qui nous intéresse est $S(5,6,48)$.
+
+- Chaque combinaison de 5 numéros parmi 6 apparaît sur **exactement** un billet.
+
+- Denniston trouve une liste de `r format(nrow(denniston),big.mark = " ")` combinaisons de 6 numéros.
+
+---
+
 ```{r}
 denniston %>% 
   head(100) %>% 
   kbl() %>% 
   scroll_box(height = "600px")
 ```
+
+---
+
+## R. H. F. Denniston
+
+- CashWinFall est une loterie à seulement 46 numéros. 
+
+- On doit donc détruire la symétrie de la liste de Denniston en enlevant tous les billets contenant un 47 ou un 48.
+
+- Ça nous donne une liste de `r format(nrow(cashwinfall),big.mark = " ")` combinaisons de 6 numéros.
+
+- Qu'arrive-t'il si nous jouons à CashWinFall avec ces `r format(nrow(cashwinfall),big.mark = " ")` billets?
+
+---
+
+
+
+
+
+
+
+
 

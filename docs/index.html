@@ -2765,19 +2765,39 @@ class:center, middle
 
 ---
 
+class: inverse, center, middle
+
+# Comment choisir les numéros pour s'assurer de gagner?
+
+---
+
 ## Le plan de Fano
 
-&lt;img src="index_files/figure-html/fano-plane-1.png" style="display: block; margin: auto;" /&gt;
+- En géométrie projective finie, le plan de Fano, nommé ainsi d'après le mathématicien Gino Fano, est le plus petit plan projectif fini.
+
+- C'est-à-dire qu'il comporte le plus petit nombre de points et de droites, à savoir 7 de chaque. 
+
+- C'est le seul plan projectif (au sens des axiomes d'incidence) de 7 points, et c'est le plan projectif sur le corps fini à deux éléments.
+
+---
+
+&lt;img src="index_files/figure-html/fano-plane-empty-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="index_files/figure-html/fano-plane-contain-1.png" style="display: block; margin: auto;" /&gt;
+
+--
+
+.center[
+## &lt;font color="red"&gt;1-2-5&lt;/font&gt;, &lt;font color="blue"&gt;1-3-6&lt;/font&gt;, &lt;font color="magenta"&gt;1-4-7&lt;/font&gt;, &lt;font color="black"&gt;2-3-7&lt;/font&gt;, &lt;font color="cyan"&gt;2-4-6&lt;/font&gt;, &lt;font color="yellow"&gt;3-4-5&lt;/font&gt;, &lt;font color="green"&gt;5-6-7&lt;/font&gt;
+]
 
 ---
 
 class: inverse, center, middle
 
-# Peut-on trouver un ensemble de billets nous assurant d'obtenir *tous* les billets ayant 5 des 6 numéros choisis?
-
----
-
-## Denniston
+# Peut-on trouver un ensemble de billets nous assurant d'obtenir *tous* les billets ayant 5 des 6 numéros choisis à CashWinFall?
 
 ---
 
@@ -2786,7 +2806,35 @@ background-size: contain
 
 ---
 
+## R. H. F. Denniston
 
+- Article de 1976 dans le *Bulletin of the London Mathematical Society*.
+
+- Denniston discute d'une nouvelle manière de construire un **système de Steiner**.
+
+- Un système de Steiner de paramètres `\(t\)`, `\(k\)` et `\(n\)`, noté `\(S(t,k,n)\)`, est constitué de:
+
+  - un ensemble `\(S\)` à `\(n\)` éléments;
+  
+  - un ensemble de sous-ensembles de `\(S\)` à `\(k\)` éléments (appelés blocs);
+  
+  - tout sous-ensemble de `\(S\)` à `\(t\)` éléments est contenu dans un bloc et un seul.
+
+---
+
+
+
+---
+
+## R. H. F. Denniston
+
+- Le système qui nous intéresse est `\(S(5,6,48)\)`.
+
+- Chaque combinaison de 5 numéros parmi 6 apparaît sur **exactement** un billet.
+
+- Denniston trouve une liste de 285 384 combinaisons de 6 numéros.
+
+---
 
 &lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; "&gt;&lt;table&gt;
  &lt;thead&gt;
@@ -3602,6 +3650,28 @@ background-size: contain
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;&lt;/div&gt;
+
+---
+
+## R. H. F. Denniston
+
+- CashWinFall est une loterie à seulement 46 numéros. 
+
+- On doit donc détruire la symétrie de la liste de Denniston en enlevant tous les billets contenant un 47 ou un 48.
+
+- Ça nous donne une liste de 217 833 combinaisons de 6 numéros.
+
+- Qu'arrive-t'il si nous jouons à CashWinFall avec ces 217 833 billets?
+
+---
+
+
+
+
+
+
+
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

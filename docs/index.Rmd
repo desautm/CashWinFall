@@ -1171,7 +1171,7 @@ t5 <- wticket[c(1,3,4,5,6)]
 t6 <- wticket[c(2,3,4,5,6)]
 ```
 
-## `r wticket`
+## 1-10-18-25-36-37
 
 - Vous avez `r format(nrow(cashwinfall),big.mark = " ")` chances sur `r format(choose(46,6),big.mark = " ")` de gagner le gros lot, soit environ `r format(nrow(cashwinfall)/choose(46,6)*100)`% des chances.
 
@@ -1179,42 +1179,97 @@ t6 <- wticket[c(2,3,4,5,6)]
 
 ---
 
-## `r wticket`
+## 1-10-18-25-36-37
 
+--
 
-Avez-vous un billet avec `r t1`? *Un* des billets de Denniston possède cette combinaison.
+.pull-left[
+Avez-vous un billet avec les nombres suivants?
 
-La seule manière de ne pas l'avoir est que le billet de Denniston était `r c(t1,47)` ou `r c(t1,48)`.
+### 1-10-18-25-36
 
-Mais qu'en est-il de la combinaison `r t2`? Si 47 faisait partie de `r c(t1,47)`, il est impossible que `r c(t2,47)` fasse partie de la liste de Denniston, car vous auriez deux billets avec la même combinaison de cinq numéros.
+Si vous ne l'avez pas, c'est que:
 
-Le raisonnement est identique avec 48.
+### 1-10-18-25-36-47
+
+ou
+
+### 1-10-18-25-36-48
+]
+
+--
+
+.pull-right[
+Mais qu'en est-il de la combinaison suivante?
+
+### 1-10-18-25-37
+
+Vous ne pouvez pas avoir:
+
+### 1-10-18-25-37-47
+
+ou
+
+### 1-10-18-25-37-48
+]
 
 ---
 
-## `r wticket`
+## 1-10-18-25-36-37
+
+.pull-left[
+Avez-vous un billet avec les nombres suivants?
+
+### 1-10-18-25-36
+
+Si vous ne l'avez pas, c'est que:
+
+### <font color="red">1</font>-<font color="red">10</font>-<font color="red">18</font>-<font color="red">25</font>-36-<font color="red">47</font>
+
+ou
+
+### <font color="blue">1</font>-<font color="blue">10</font>-<font color="blue">18</font>-<font color="blue">25</font>-36-<font color="blue">48</font>
+]
+
+.pull-right[
+Mais qu'en est-il de la combinaison suivante?
+
+### 1-10-18-25-37
+
+Vous ne pouvez pas avoir:
+
+### <font color="red">1</font>-<font color="red">10</font>-<font color="red">18</font>-<font color="red">25</font>-37-<font color="red">47</font>
+
+ou
+
+### <font color="blue">1</font>-<font color="blue">10</font>-<font color="blue">18</font>-<font color="blue">25</font>-37-<font color="blue">48</font>
+]
+
+---
+
+## 1-10-18-25-36-37
 
 De toutes les combinaisons possibles de cinq numéros parmi 6:
 
 .center[
-### `r t1`
+### 1-10-18-25-36
 
-### `r t2`
+### 1-10-18-25-37
 
-### `r t3`
+### 1-10-18-36-37
 
-### `r t4`
+### 1-10-25-36-37
 
-### `r t5`
+### 1-18-25-36-37
 
-### `r t6`
+### 10-18-25-36-37
 ]
 
 Vous êtes *assurés* d'en avoir au moins quatre! 
 
 ---
 
-## `r wticket`
+## 1-10-18-25-36-37
 
 ```{r, proba-denniston}
 pjackpot <- nrow(cashwinfall)/choose(46,6)*100

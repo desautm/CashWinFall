@@ -1,15 +1,16 @@
 library(tidyverse)
 
 p <- choose(6,5)*choose(40,1)/choose(46,6)
+n <- 217833
 
-selbee <- tribble(
+pselbee <- tribble(
   ~Résultat, ~Probabilité,
-  "Aucun 5 dans 6", dbinom(0,217833,p),
-  "1 billet 5 dans 6", dbinom(1,217833,p),
-  "2 billet 5 dans 6", dbinom(2,217833,p),
-  "3 billet 5 dans 6", dbinom(3,217833,p),
-  "4 billet 5 dans 6", dbinom(4,217833,p),
-  "5 billet 5 dans 6", dbinom(5,217833,p),
-  "6 billet 5 dans 6", dbinom(6,217833,p),
-  "Plus de 6 billets de 5 dans 6", pbinom(6,217833,p,lower.tail = FALSE)
+  "Aucun 5 dans 6", dbinom(0,n,p),
+  "1 billet 5 dans 6", dbinom(1,n,p),
+  "2 billets 5 dans 6", dbinom(2,n,p),
+  "3 billets 5 dans 6", dbinom(3,n,p),
+  "4 billets 5 dans 6", dbinom(4,n,p),
+  "5 billets 5 dans 6", dbinom(5,n,p),
+  "6 billets 5 dans 6", dbinom(6,n,p),
+  "Plus de 6 billets de 5 dans 6", pbinom(6,n,p,lower.tail = FALSE)
 )

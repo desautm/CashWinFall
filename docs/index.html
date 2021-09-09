@@ -142,7 +142,7 @@ class: inverse, center, middle
 
 - En mathématiques, une combinaison est une sélection d'objets choisis parmi une collection, de telle manière à ce que l'ordre de sélection n'a pas d'importance.
 
-- Le nombre de combinanisons est donné par le coefficient binomial:
+- Le nombre de combinaisons est donné par le coefficient binomial:
 
 `$$\binom{n}{k}=C_k^n=\dfrac{n!}{k!(n-k)!}$$`
 
@@ -207,18 +207,6 @@ $$ \dfrac{300\$\times 1}{200}+\dfrac{0\$\times 199}{200} = 1,50\$ $$
 
 ---
 
-## La loi hypergéométrique
-
-- On tire simultanément `\(n\)` boules dans une urne contenant `\(N_1=pN\)` boules gagnantes et `\(N_2=qN\)` boules perdantes (avec `\(q=1-p\)`). On compte alors le nombre de boules gagnantes extraites.
-
-- Correspond à une pige **sans** remise.
-
-- `\(P(X=x) = \dfrac{\binom{pN}{x}\binom{qN}{n-x}}{\binom{N}{n}}\)`
-
-- `\(E(X) = np\)`
-
----
-
 class: inverse, center, middle
 
 # Cash WinFall
@@ -272,7 +260,7 @@ class:inverse, center, middle
 
 ---
 
-## Le "Roll-Down"
+## Le «Roll-Down»
 
 - Le gros lot débutait à 500 000$.
 
@@ -282,11 +270,14 @@ class:inverse, center, middle
 
 - Si le gros lot atteignait 2 000 000$ et que personne ne le gagnait, **une partie de l'argent du gros lot était redistribuée aux lots de moindre valeur**.
 
+
+
+
 ---
 
-## Le "Roll-Down" du 8 février 2010
+## Le «Roll-Down» du 8 février 2010
 
-| Nombre de numéros | Probabilité                       | Prix habituel  | Prix "roll-down" |
+| Nombre de numéros | Probabilité                       | Prix habituel  | Prix «roll-down» |
 |-------------------|-----------------------------------|----------------|------------------|
 | Les 6 numéros     | `\(\frac{1}{9\ 366\ 819}\)`           | Variable       | Pas gagné        |
 | 5 numéros sur 6   | `\(\frac{240}{9\ 366\ 819}\)`         | 4 000$         | 22 096$          |
@@ -305,7 +296,7 @@ $$
 --
 
 .center[
-## Un billet rapporte donc en "moyenne" 0,14$!
+## Un billet rapporte donc en «moyenne» 0,14$!
 ]
 
 ---
@@ -345,7 +336,7 @@ Environ 29 283 billets avec 2 des 6 numéros gagnants, donc 29 283 billets gratu
 
 class:center, middle, inverse
 
-# Qui a profité du *rolldown*?
+# Qui a profité du «rolldown»?
 
 ---
 
@@ -388,8 +379,8 @@ Trois mois plus tard, il joue une seconde fois à CashWinFall.
 
 | 8 000$ | Argent investi |
 |--------|----------------|
-| 15 700$ | Argent gagné   |
-| +7 700$   | Profit         |
+| 15 700$| Argent gagné   |
+| +7 700$| Profit         |
 
 ]
 
@@ -415,7 +406,7 @@ Trois mois plus tard, il joue une seconde fois à CashWinFall.
 
 - Durant les années qui suivent, la loterie devient un travail à temps plein pour Harvey. 
 
-- Le 16 août 2010, un *roll-down* arrive, en grande partie en raison de l'achat massif de 700 000!!! billets, tous remplis à la main par *RANDOM STRATEGIES INVESTMENTS*.
+- Le 16 août 2010, un «roll-down» arrive, en grande partie en raison de l'achat massif de 700 000!!! billets, tous remplis à la main par *RANDOM STRATEGIES INVESTMENTS*.
 
 - Harvey estime que le groupe a fait un profit de 700 000$ cette journée-là.
 
@@ -466,7 +457,7 @@ class:inverse, center, middle
 
 --
 
-- Il se trouve que ce nombre est 23, ce qui choque un peu l'intuition.
+- ### 23
 
 --
 
@@ -5025,9 +5016,15 @@ background-size: contain
 
 ---
 
+## On pige six numéros au hasard qui forment le billet gagnant
 
+--
 
+.center[
 ## 1-10-18-25-36-37
+]
+
+--
 
 - Vous avez 217 833 chances sur 9 366 819 de gagner le gros lot, soit environ 2.325581% des chances.
 
@@ -5101,6 +5098,10 @@ ou
 ### &lt;font color="blue"&gt;1&lt;/font&gt;-&lt;font color="blue"&gt;10&lt;/font&gt;-&lt;font color="blue"&gt;18&lt;/font&gt;-&lt;font color="blue"&gt;25&lt;/font&gt;-37-&lt;font color="blue"&gt;48&lt;/font&gt;
 ]
 
+--
+
+### Si 47 (ou 48) vous fait rater une combinaison, il ne peut pas vous en faire rater une autre!
+
 ---
 
 ## 1-10-18-25-36-37
@@ -5125,23 +5126,91 @@ Vous êtes *assurés* d'en avoir au moins quatre!
 
 ---
 
-## 1-10-18-25-36-37
-
-
-
-Si vous acheter les 217 833 billets de Denniston vous avez:
-
-2.3255814% de gagner le gros lot
-
-72.7564693% de gagner six des combinaisons 5 dans 6
-
-23.6702128% de gagner cinq des combinaisons 5 dans 6
-
-1.2477365% de gagner quatre des combinaisons 5 dans 6
+## Lors du tirage
 
 
 
 
+
+En achetant 217 833 billets, vous avez une probabilité de 0.0232558 de gagner le gros lot.
+
+.pull-left[
+Si vous achetez les 217 833 billets de Denniston vous avez:
+
+&lt;table class="table table-striped table-hover table-condensed" style="font-size: 16px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Résultat &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Probabilité &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 billets 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0124774 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 billets 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2367021 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 billets 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7275647 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.pull-right[
+Si vous achetez les 217 833 billets de Selbee vous avez:
+&lt;table class="table table-striped table-hover table-condensed" style="font-size: 16px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Résultat &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Probabilité &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Aucun 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0037670 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 billet 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0210259 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 billets 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0586780 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 billets 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1091702 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 billets 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1523324 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 billets 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1700467 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 billets 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1581834 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Plus de 6 billets de 5 dans 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3267964 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+
+background-image: url(https://media.giphy.com/media/fyzODLrZORdUA/giphy.gif?cid=ecf05e47rhx3otx5micnwsvn4zexlfbbbm7d8fogdeauidfn&amp;rid=giphy.gif&amp;ct=g)
+background-size: contain
 
 
     </textarea>

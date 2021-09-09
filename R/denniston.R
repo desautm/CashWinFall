@@ -1,5 +1,6 @@
 library(tidyverse)
 library(here)
+library(gtools)
 
 # Données trouvées ici: https://www.dmgordon.org/steiner/
 # https://ljcr.dmgordon.org/cover/LARGE/C_48_6_5.html
@@ -51,3 +52,43 @@ ncashwinfall <- nrow(cashwinfall)
 nreject <- nrow(reject)
 
 p <- (n47+n48-n47_48)/(ndenniston-n47_48)
+
+# allcombinations <-combinations(46,6,1:46)
+# colnames(allcombinations) <- c("Numéro 1", "Numéro 2", "Numéro 3", "Numéro 4", "Numéro 5", "Numéro 6")
+# loto <- as_tibble(allcombinations)
+# save(loto, file="loto.Rdata")
+
+load("loto.Rdata")
+
+result <- rep(0,nrow(loto))
+for (i in 1:100){
+  num <- loto[i,]
+  n <- 0
+  for (j in 1:ncashwinfall){
+    test <- sum(num %in% cashwinfall[j,])
+    if (test == 5) n <- n+1
+    if (n > 5) break
+  }
+  result[i] <- n
+}
+
+n <- 0
+num <- loto[56,]
+ncashwinfall <- nrow(cashwinfall)
+for (j in 1:ncashwinfall){
+  test <- sum(num %in% cashwinfall[j,])
+  if (test == 5) n <- n+1
+  if (n > 5) break
+}
+
+num <- loto[789562,]
+cashwinfall %>% 
+  rowwise() %>% 
+  mutate(test = sum(num %in% c(col1,col2,col3,col4,col5,col6))) %>% 
+  group_by(test) %>% 
+  summarise(n())
+
+
+
+
+

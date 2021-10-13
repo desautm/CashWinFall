@@ -904,6 +904,16 @@ class: inverse, center, middle
 
 ---
 
+## Le plan de Fano
+
+- En géométrie projective finie, le plan de Fano, nommé ainsi d'après le mathématicien Gino Fano, est le plus petit plan projectif fini.
+
+- C'est-à-dire celui comportant le plus petit nombre de points et de droites, à savoir 7 de chaque. 
+
+- C'est le seul plan projectif (au sens des axiomes d'incidence) de 7 points, et c'est le plan projectif sur le corps fini à deux éléments.
+
+---
+
 ```{tikz,fano-plane-empty,echo=FALSE,fig.align="center",cache=TRUE}
 \usetikzlibrary{calc}
 \begin{tikzpicture}[scale=2]
@@ -1321,7 +1331,21 @@ pselbee %>%
 
 ---
 
+class: inverse, center, middle
+
+### Les méthodes Denniston et Selbee ont la même espérance mathématique de gains.
+
+### La méthode Selbee augmente le risque par rapport à la méthode Denniston.
+
+### Bien sûr, ce risque vient avec un avantage, Selbee a une probabilité d'environ `r pselbee$Probabilité[8]*100` % d'obtenir plus de 6 des prix 5 numéros sur 6, ce qui est impossible en achetant nos billets avec la méthode Denniston.
+
+---
+
 background-image: url(https://media.giphy.com/media/fyzODLrZORdUA/giphy.gif?cid=ecf05e47rhx3otx5micnwsvn4zexlfbbbm7d8fogdeauidfn&rid=giphy.gif&ct=g)
 background-size: contain
 
+---
 
+class: inverse, center, middle
+
+# Des questions?
